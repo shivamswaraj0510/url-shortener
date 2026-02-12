@@ -16,7 +16,10 @@ try {
   });
   res.render("urlshort.ejs", {
     shortUrl: shortId,
+    baseUrl: req.protocol + "://" + req.get("host"),
   });
+  
+
 } catch (error) {
   console.error(error);
   res.status(500).send("Server Error");
