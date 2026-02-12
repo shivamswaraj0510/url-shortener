@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Url Shortner</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+  <div class="container">
+
+    <h1>Url Shortner</h1>
+
+    <form action="/shortner" method="POST">
+      <input
+        type="text"
+        name="url"
+        placeholder="Paste your long Url here"
+        required
+      >
+      <button type="submit">Submit</button>
+    </form>
+
+    <% if (shortUrl) { %>
+  <div class="result">
+    <h2>Short URL:</h2>
+
+    <div class="copy-container">
+      <input 
+        type="text" 
+        value="http://localhost:1000/<%= shortUrl %>" 
+        id="shortUrlInput"
+        readonly
+      />
+      <button onclick="copyUrl()">Copy</button>
+    </div>
+
+    <p id="copyMessage"></p>
+  </div>
+<% } %>
+
+
+  </div>
+</body>
+<script>
+  function copyUrl() {
+    const input = document.getElementById("shortUrlInput");
+    const message = document.getElementById("copyMessage");
+
+    input.select();
+    input.setSelectionRange(0, 99999); // for mobile
+
+    navigator.clipboard.writeText(input.value);
+
+    message.innerText = "Copied to clipboard!";
+    message.style.color = "green";
+
+    setTimeout(() => {
+      message.innerText = "";
+    }, 2000);
+  }
+</script>
+
+
+</html>

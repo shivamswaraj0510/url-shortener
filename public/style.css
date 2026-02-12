@@ -1,0 +1,127 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .container {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  h1 {
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
+  }
+
+  button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+  }
+
+  .result {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f4f6ff;
+    border-radius: 8px;
+    animation: slideUp 0.4s ease;
+  }
+
+  .result a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .result a:hover {
+    text-decoration: underline;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+.copy-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.copy-container input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.copy-container button {
+  padding: 10px 15px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.copy-container button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+#copyMessage {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
