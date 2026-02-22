@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-
+app.set("trust proxy", true);
 // app.set("views", "./temp");
 mongoose
   .connect(process.env.MONGO_URL, { dbName: "Node_Mastery" })
